@@ -10,13 +10,13 @@ from tensorflow.keras.layers import Conv2DTranspose, Conv2D, InputLayer, Average
 import numpy as np
 
 mode = 0 #1 = train, 0 = infer
-model_file = "denoise_ABF_uniform_1024_2" #do not include the .index extension; as this added automatically.
+model_file = "" #do not include the .index extension; as this is added automatically.
 infer_dir = ""
-train_dir = "../GaN_ABF_N_Val"
+train_dir = ""
 results_dir = "results"
 tmp_dir = "tmp" #used to temp storage of noised images
 minimum_loss = 0.0122 # adjust as necessary to prevent overtraining, or set to 0 to disable this check
-image_size = 1024 # this is a helper; changing will build the proper neural net layers to fit 
+image_size = 512 # this is a helper; changing will build the proper neural net layers to fit 
                  # maintain a number that is a multiple of 2: 128, 256, 512, 1024, 2048, etc.
                  # do not go below 128
 noise_type = 0 #0 = uniform, 1 = normal, 2 = poisson (lambda 0.45)
